@@ -2,11 +2,11 @@
 \usetikzlibrary{calc}
 
 % -------- COLOR SCHEME --------
-\definecolor{PrimaryColor}{RGB}{7,79,140} % primary color (blue)
+\definecolor{PrimaryColor}{RGB}{35,31,32} % primary color (dark grey)
 \definecolor{SecondaryColor}{RGB}{242,88,26} % bulleted lists
 \definecolor{BackgroundColor}{RGB}{255,255,255} % background & titles (white)
 \definecolor{TextColor}{RGB}{0,0,0} % text (black)
-\definecolor{ProgBarBGColor}{RGB}{175,175,175} % progress bar background (grey)
+\definecolor{ProgBarBGColor}{RGB}{35,31,32} % progress bar background (grey)
 
 
 % set colours
@@ -124,8 +124,9 @@
 			% text (title, subtitle, author, date)
 			\node[anchor=south,text width=\slidewidth-1cm,inner xsep=0.5cm] at (0.5\slidewidth,4cm) {\color{BackgroundColor}\Huge\textbf{\inserttitle}};
 			\node[anchor=north east,text width=\slidewidth-1cm,align=right] at (\slidewidth-0.4cm,4cm) {\color{PrimaryColor}\large\textbf{\insertsubtitle}};
-			\node at (0.5\slidewidth,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
-			\node at (0.5\slidewidth,1.25cm) {\color{PrimaryColor}\Large\insertinstitute};
+			\node at (0.5\slidewidth,2.5cm) {\color{PrimaryColor}\LARGE\insertauthor};
+			\node at (0.5\slidewidth,1.25cm) {\color{PrimaryColor}\large Department of Swedish, Multilingualism, Language Technology};
+			\node at (0.5\slidewidth,1.75cm) {\color{PrimaryColor}\large Språkbanken Text};
 			\node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\tiny\insertdate};
 		\else % other slides
 			% title bar
