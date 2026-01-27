@@ -58,7 +58,7 @@ Finse <MC><i>aveva paura</i><c>che aveva paura</c>
 </MC> di un <DN><i>rapito</i><c>rapimento</c></DN>.
 ```
 
-## See problems
+## The problems
 - lack of interoperability between corpora
 - lots of manual annotation needed
 - coarse-grained error labels
