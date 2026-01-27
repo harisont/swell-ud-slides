@@ -8,7 +8,6 @@
 \definecolor{TextColor}{RGB}{0,0,0} % text (black)
 \definecolor{ProgBarBGColor}{RGB}{35,31,32} % progress bar background (grey)
 
-
 % set colours
 \setbeamercolor{normal text}{fg=TextColor}\usebeamercolor*{normal text}
 \setbeamercolor{alerted text}{fg=PrimaryColor}
@@ -23,23 +22,23 @@
 
 % make pixelated bullets
 \setbeamertemplate{itemize item}{
-	\tikz{
-		\draw[fill=SecondaryColor,draw=none] (0, 0) rectangle(0.1, 0.1);
-		\draw[fill=SecondaryColor,draw=none] (0.1, 0.1) rectangle(0.2, 0.2);
-		\draw[fill=SecondaryColor,draw=none] (0, 0.2) rectangle(0.1, 0.3);
-	}
+  \tikz{
+    \draw[fill=SecondaryColor,draw=none] (0, 0) rectangle(0.1, 0.1);
+    \draw[fill=SecondaryColor,draw=none] (0.1, 0.1) rectangle(0.2, 0.2);
+    \draw[fill=SecondaryColor,draw=none] (0, 0.2) rectangle(0.1, 0.3);
+  }
 }
 \setbeamertemplate{itemize subitem}{
-	\tikz{
-		\draw[fill=SecondaryColor,draw=none] (0, 0) rectangle(0.075, 0.075);
-		\draw[fill=SecondaryColor,draw=none] (0.075, 0.075) rectangle(0.15, 0.15);
-		\draw[fill=SecondaryColor,draw=none] (0, 0.15) rectangle(0.075, 0.225);
-	}
+  \tikz{
+    \draw[fill=SecondaryColor,draw=none] (0, 0) rectangle(0.075, 0.075);
+    \draw[fill=SecondaryColor,draw=none] (0.075, 0.075) rectangle(0.15, 0.15);
+    \draw[fill=SecondaryColor,draw=none] (0, 0.15) rectangle(0.075, 0.225);
+  }
 }
 \setbeamertemplate{itemize subsubitem}{
-	\tikz{
-		\draw[fill=SecondaryColor,draw=none] (0.050, 0.050) rectangle(0.15, 0.15);
-	}
+  \tikz{
+    \draw[fill=SecondaryColor,draw=none] (0.050, 0.050) rectangle(0.15, 0.15);
+  }
 }
 
 % disable navigation
@@ -60,17 +59,17 @@
 %\setbeamertemplate{caption label separator}{}
 
 % add some space below the footnotes so they don't end up on the progress bar
-\setbeamertemplate{footnote}{ 
-	\parindent 0em
-	\noindent 
-	\raggedright 
-	\hbox to 0.8em{\hfil\insertfootnotemark}
-	\insertfootnotetext
-	\par
-	\vspace{2em}
+\setbeamertemplate{footnote}{
+  \parindent 0em
+  \noindent
+  \raggedright
+  \hbox to 0.8em{\hfil\insertfootnotemark}
+  \insertfootnotetext
+  \par
+  \vspace{2em}
 }
 
-% add the same vspace both before and after quotes 
+% add the same vspace both before and after quotes
 \setbeamertemplate{quote begin}{\vspace{0.5em}}
 \setbeamertemplate{quote end}{\vspace{0.5em}}
 
@@ -101,88 +100,87 @@
 
 % draw everything with tikz
 \setbeamertemplate{background}{ % all slides
-	% progress bar stuff
-	\progressbar@tmpcounta=\insertframenumber
-	\progressbar@tmpcountb=\inserttotalframenumber
-	\progressbar@tmpdim=\progressbar@pbwidth
-	\divide\progressbar@tmpdim by 100
-	\multiply\progressbar@tmpdim by \progressbar@tmpcounta
-	\divide\progressbar@tmpdim by \progressbar@tmpcountb
-	\multiply\progressbar@tmpdim by 100
+  % progress bar stuff
+  \progressbar@tmpcounta=\insertframenumber
+  \progressbar@tmpcountb=\inserttotalframenumber
+  \progressbar@tmpdim=\progressbar@pbwidth
+  \divide\progressbar@tmpdim by 100
+  \multiply\progressbar@tmpdim by \progressbar@tmpcounta
+  \divide\progressbar@tmpdim by \progressbar@tmpcountb
+  \multiply\progressbar@tmpdim by 100
 
-	\begin{tikzpicture}
-		% set up the entire slide as the canvas
-		\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \begin{tikzpicture}
+    % set up the entire slide as the canvas
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
 
-		% background
-		\fill[color=BackgroundColor] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    % background
+    \fill[color=BackgroundColor] (0,0) rectangle(\the\paperwidth,\the\paperheight);
 
-		\ifnum\thepage=1\relax % only title slides
-			% primary color rectangle
-			\fill[color=PrimaryColor] (0, 4cm) rectangle(\slidewidth,\slideheight);
+    \ifnum\thepage=1\relax % only title slides
+    % primary color rectangle
+    \fill[color=PrimaryColor] (0, 4cm) rectangle(\slidewidth,\slideheight);
 
-			% text (title, subtitle, author, date)
-			\node[anchor=south,text width=\slidewidth-1cm,inner xsep=0.5cm] at (0.5\slidewidth,4cm) {\color{BackgroundColor}\Huge\textbf{\inserttitle}};
-			\node[anchor=north east,text width=\slidewidth-1cm,align=right] at (\slidewidth-0.4cm,4cm) {\color{PrimaryColor}\large\textbf{\insertsubtitle}};
-			\node at (0.5\slidewidth,2.5cm) {\color{PrimaryColor}\LARGE\insertauthor};
-			\node at (0.5\slidewidth,1.25cm) {\color{PrimaryColor}\large Department of Swedish, Multilingualism, Language Technology};
-			\node at (0.5\slidewidth,1.75cm) {\color{PrimaryColor}\large Språkbanken Text};
-			\node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\tiny\insertdate};
-		\else % other slides
-			% title bar
-			\fill[color=PrimaryColor] (0, \slideheight-1cm) rectangle(\slidewidth,\slideheight);
+    % text (title, subtitle, author, date)
+    \node[anchor=south,text width=\slidewidth-1cm,inner xsep=0.5cm] at (0.5\slidewidth,4cm) {\color{BackgroundColor}\Huge\textbf{\inserttitle}};
+    \node[anchor=north east,text width=\slidewidth-1cm,align=right] at (\slidewidth-0.4cm,4cm) {\color{PrimaryColor}\large\textbf{\insertsubtitle}};
+    \node at (0.5\slidewidth,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
+    \node at (0.5\slidewidth,1.25cm) {\color{PrimaryColor}\Large\insertinstitute};
+    \node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\tiny\insertdate};
+    \else % other slides
+    % title bar
+    \fill[color=PrimaryColor] (0, \slideheight-1cm) rectangle(\slidewidth,\slideheight);
 
-			% slide title
-			\node[anchor=north,text width=\slidewidth-0.75cm,inner xsep=0.5cm,inner ysep=0.25cm] at (0.5\slidewidth,\slideheight) {\color{BackgroundColor}\huge\textbf{\insertframetitle}};
+    % slide title
+    \node[anchor=north,text width=\slidewidth-0.75cm,inner xsep=0.5cm,inner ysep=0.25cm] at (0.5\slidewidth,\slideheight) {\color{BackgroundColor}\huge\textbf{\insertframetitle}};
 
-			% logo (TODO: autoscale; now it expects 350x350
-			\node[anchor=north east] at (\slidewidth-0.25cm,\slideheight+0.06cm){\insertlogo};
+    % logo (TODO: autoscale; now it expects 350x350
+    \node[anchor=north east] at (\slidewidth-0.25cm,\slideheight+0.06cm){\insertlogo};
 
-			% show progress bar
-			\ifnum \value{showProgressBar}>0\relax%
-				% progress bar icon in the middle of the screen
-				\draw[fill=ProgBarBGColor,draw=none] (0cm,0cm) rectangle(\slidewidth,0.25cm);
-				\draw[fill=PrimaryColor,draw=none] (0cm,0cm) rectangle(\progressbar@tmpdim,0.25cm);
+    % show progress bar
+    \ifnum \value{showProgressBar}>0\relax%
+    % progress bar icon in the middle of the screen
+    \draw[fill=ProgBarBGColor,draw=none] (0cm,0cm) rectangle(\slidewidth,0.25cm);
+    \draw[fill=PrimaryColor,draw=none] (0cm,0cm) rectangle(\progressbar@tmpdim,0.25cm);
 
-				% bottom info
-				\node[anchor=south west] at(0cm,0.25cm) {\color{PrimaryColor}\tiny\vphantom{lp}\insertsection};
-				% if slide numbers are active
-				\ifnum \value{showSlideNumbers}>0\relax%
-					% if slide totals are active
-					\ifnum \value{showSlideTotal}>0\relax%
-						% draw both slide number and slide total
-						\node[anchor=south east] at(\slidewidth,0.25cm) {\color{PrimaryColor}\tiny\insertframenumber/\inserttotalframenumber};
-					\else
-						\node[anchor=south east] at(\slidewidth,0.25cm) {\color{PrimaryColor}\tiny\insertframenumber};
-					\fi
-				\fi
-			\else
-				% section title in the bottom left
-				\node[anchor=south west] at(0cm,0cm) {\color{PrimaryColor}\tiny\vphantom{lp}\insertsection};
-				% if we're showing slide numbers
-				\ifnum \value{showSlideNumbers}>0\relax%
-					% if slide totals are active
-					\ifnum \value{showSlideTotal}>0\relax%
-						% slide number and slide total
-						\node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\tiny\insertframenumber/\inserttotalframenumber};
-					\else
-						\node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\tiny\insertframenumber};
-					\fi
-				\fi
-			\fi
-		\fi
-	\end{tikzpicture}
+    % bottom info
+    \node[anchor=south west] at(0cm,0.25cm) {\color{PrimaryColor}\tiny\vphantom{lp}\insertsection};
+    % if slide numbers are active
+    \ifnum \value{showSlideNumbers}>0\relax%
+    % if slide totals are active
+    \ifnum \value{showSlideTotal}>0\relax%
+    % draw both slide number and slide total
+    \node[anchor=south east] at(\slidewidth,0.25cm) {\color{PrimaryColor}\tiny\insertframenumber/\inserttotalframenumber};
+    \else
+    \node[anchor=south east] at(\slidewidth,0.25cm) {\color{PrimaryColor}\tiny\insertframenumber};
+    \fi
+    \fi
+    \else
+    % section title in the bottom left
+    \node[anchor=south west] at(0cm,0cm) {\color{PrimaryColor}\tiny\vphantom{lp}\insertsection};
+    % if we're showing slide numbers
+    \ifnum \value{showSlideNumbers}>0\relax%
+    % if slide totals are active
+    \ifnum \value{showSlideTotal}>0\relax%
+    % slide number and slide total
+    \node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\tiny\insertframenumber/\inserttotalframenumber};
+    \else
+    \node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\tiny\insertframenumber};
+    \fi
+    \fi
+    \fi
+    \fi
+  \end{tikzpicture}
 }
 \makeatother
 
 \AtBeginSection{\frame{\sectionpage}} % section pages
 \setbeamertemplate{section page}
 {
-	\begin{tikzpicture}
-		% set up the entire slide as the canvas
-		\useasboundingbox (0,0) rectangle(\slidewidth,\slideheight);
-		\fill[color=BackgroundColor] (-1cm, 2cm) rectangle (\slidewidth, \slideheight+0.1cm);
-		\fill[color=PrimaryColor] (-1cm, 0.5\slideheight-1cm) rectangle(\slidewidth, 0.5\slideheight+1cm);
-		\node[text width=\the\paperwidth-1cm,align=center] at (0.4\slidewidth, 0.5\slideheight) {\color{BackgroundColor}\Huge\textbf{\insertsection}};
-	\end{tikzpicture}
+  \begin{tikzpicture}
+    % set up the entire slide as the canvas
+    \useasboundingbox (0,0) rectangle(\slidewidth,\slideheight);
+    \fill[color=BackgroundColor] (-1cm, 2cm) rectangle (\slidewidth, \slideheight+0.1cm);
+    \fill[color=PrimaryColor] (-1cm, 0.5\slideheight-1cm) rectangle(\slidewidth, 0.5\slideheight+1cm);
+    \node[text width=\the\paperwidth-1cm,align=center] at (0.4\slidewidth, 0.5\slideheight) {\color{BackgroundColor}\Huge\textbf{\insertsection}};
+  \end{tikzpicture}
 }

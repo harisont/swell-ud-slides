@@ -1,35 +1,14 @@
 ---
-title: "Treebanking SweLL"
-subtitle: "the Swedish Learner Language Corpus"
+title: "Trädbanken SweLL"
+subtitle: "när andraspråkstalare annoterar andraspråkstexter"
 author: "Arianna Masciolini"
 theme: "lucid"
 logo: "gu.png"
-date: "22 October 2025"
-institute: "SBX, Department of Swedish, Multilingualism, Language technology"
+date: "6 februari 2026"
+institute: "Språkbanken text"
 ---
 
-## Introducing SweLL
-(aka the Swedish Learner Language corpus)
-
-- __genre__: essays (misc topics)
-- __learners__: adult L2 Swedish learners with various language backgrounds and proficiency levels
-- __annotation__: error tagging, pseudonymization and normalization (minimal edits)
-
-## A look at the data
-
-\vspace{-5.18em} 
-
-### Swedish (SweLL)
-\small
-```xml
-<sentence> <w ref="1">"</w> <w ref="2" target_form="Det" 
-correction_label="L-Ref">Den</w> <w ref="3">är</w> 
-<w ref="4">en</w> <w ref="5">tredjedel</w> 
-<w ref="6">av</w> <w ref="7">din</w> <w ref="8">dag</w> 
-<w ref="9">!</w> </sentence>
-```
-
-## A look at the data
+## Andraspråkskorpusar
 
 \bigskip \bigskip \bigskip
 
@@ -58,78 +37,437 @@ Finse <MC><i>aveva paura</i><c>che aveva paura</c>
 </MC> di un <DN><i>rapito</i><c>rapimento</c></DN>.
 ```
 
-## The problems
-- lack of interoperability between corpora
-- lots of manual annotation needed
-- coarse-grained error labels
-- exclusive focus on errors
+## Begränsningar
+- olika format som är inkompatibla med varandra
+- manuell taggning
+- grovkorniga felkategoritaggar (TODO: bättre översättning för "coarse-grained"?)
+- snäv inriktning på språkliga fel
 
-## The solution: UD
-Universal Dependencies
+## Universal Dependencies
+Universal Dependencies är:
 
-- a __cross-lingually consistent grammatical annotation scheme__, designed to be
-  - human- _and_ machine-readable
-  - suitabile for both mono- _and_ multilingual use cases <!--uniform morphosyntactic annotation layer complemented by language-specific guidelines; we focus on the former-->
-- a growing multilingual collection of dependency treebanks (160+ languages and 600+ contributors!)
+- ett ramverk för att skapa morfosyntaktiska analyser som är
+  - trärspråkligt konsekventa
+  - läsbara för både människor och maskiner
+  - tillämpliga i både en- och flerspråkiga användningsscenarier
+- en växande samling trädbanker för 180+ språk
 
-## The solution: UD
-\bigskip
-- adopting a __shared data format__ grants basic interoperability between corpora
-- __parsers__ help boostrapping the annotation process
-- __fine-grained morphosyntactic annotation__ allows moving beyond error detection/tagging
-- __cross-linguistic consistency__\* enables comparisons between:
-  - L1 and L2
-  - different L2s
-  - L2 and TL[^1]
+## UD för andraspråksdata
 
-[^1]: especially with __parallel learner treebanks__
+- UD:s __standardformat__ (CoNLL-U) tillgängliggör etablerade sök- och bearbetningsverktyg 
+- befintliga __parsrar__ underlättar annoteringen
+- __detaljerade morfosyntaktiska analyser__ kan användas för att studera L2-grammatik i stort
+- att analyserna är __tvärspråkligt konsekventa__\* gör det möjligt att jämföra:
+  - andraspråksproduktioner med målspråket
+  - andraspråket med modersmålet hos samma grupp
+  - olika andraspråk hos samma grupp
 
-## UD treebanks of learner language
-\bigskip
-
-| **language** | **name**  | **sentences** | **status**      |
-| -----------: | --------  | -------:      | :-----------:   |
-| Chinese      | CFL       | 451           | released        |
-| English      | ESL       | 5124          | retired         |
-| English      | ESLSpok   | 2320          | released        |
-| Greek        | GLCII     |               | in progress     |
-| Italian      | Valico    | 398           | released        |
-| Korean       | KSL       | 12977         | released        |
-| Russian      |           | 500           | in progress     |
-| **Swedish**  | **SweLL** | **~5000**     | **in progress** |
-
-## \*
-UD guidelines do **_not_** cover all relevant interlanguage phenomena and are **_not_** universally adopted across learner treebanks
+## \* OBS!
+### TL;DR:
+De officiella UD-riktlinjerna specificerar **_inte_** hur alla andraspråksfenomen ska analyseras; därför är andraspråksträdbanker **_inte_** 100% kompatibla med varandra
 
 \bigskip
 
-### Learn more:
+### Läs mer:
 Arianna Masciolini, Aleksandrs Berdicevskis, Maria Irena Szawerna, and Elena Volodina. _Annotating second language in Universal Dependencies: a review of current practices and directions for harmonized guidelines_ (2025)
 
-## TL;DR - literal vs. "distributional"
-\setlength{\unitlength}{0.45mm}
-\begin{picture}(195.0,110.0)
-  \put(0.0,0.0){en}
-  \put(37.0,0.0){lång}
-  \put(83.0,0.0){\bfseries bus}
-  \put(129.0,0.0){\bfseries resa}
+
+## Andraspråksträdbanker
+\bigskip
+
+|   **språk** | **namn**  | **meningar** | **parallell** | **tillgänglig** |
+| ----------: | --------- | -----------: | :-----------: | :-------------: |
+|   kinesiska | CFL       |          451 | (\checkmark)  |   \checkmark    |
+|    engelska | ESL       |         5124 |  \checkmark   |  (\checkmark)   |
+|    engelska | ESLSpok   |         2320 |               |   \checkmark    |
+|    grekiska | GLCII     |         670+ |  \checkmark   |     snart!      |
+|  italienska | Valico    |          398 |  \checkmark   |   \checkmark    |
+|   koreanska | KSL       |        12977 |               |   \checkmark    |
+|       ryska |           |          500 |  \checkmark   |                 |
+|     spanska |           |          383 |               |                 |
+| **svenska** | **SweLL** |     **510+** |  \checkmark   |   \checkmark    |
+|   tjeckiska |           |        2000+ |  \checkmark   |                 |
+
+## Källkorpus
+SweLL (Swedish Learner Language) korpusen:
+
+- består av elevuppsatser skrivna inom ramen för utbildning i svenska som andraspråk
+- representerar vuxna inlärare med olika språkbakgrund och kunskapsnivåer
+- är pseudonymiserad och annoterad med normaliseringar och felkategoritaggar
+
+## Annoterare
+- första 510 meningar (med i UD 2.17):
+  - Aleksandrs Berdicevskis (L1: ryska)
+  - Maria Irena Szawerna (L1: polska)
+  - Arianna Masciolini (L1: italienska)
+- ytterligare ~140 meningar skrivna av elever med franska som modersmål eller skolspråk:
+  - Caroline Grand-Clement (L1: franska)
+  - Arianna Masciolini (L1: italienska)
+
+## Riktlinjer
+1. analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering
+2. medelväg mellan s.k. _ordagrann_ och _distributionell_ annotering:
+   - LEMMA, UPOS och FEATS beskriver ordformen i sig  
+   - HEAD och DEPREL tilldelas baserat på hur ordet används
+3. tydliga transferfenomen annoteras enligt riktlinjerna för källspråket
+
+## Riktlinjer
+1. \textcolor{SecondaryColor}{analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering}
+2. medelväg mellan s.k. _ordagrann_ och _distributionell_ annotering:
+   - LEMMA, UPOS och FEATS beskriver ordformen i sig  
+   - HEAD och DEPREL tilldelas baserat på hur ordet används
+3. tydliga transferfenomen annoteras enligt riktlinjerna för källspråket
+
+## Exempel 1
+\bigskip
+\bigskip
+
+\small
+
+\setlength{\unitlength}{0.193mm}
+\begin{picture}(686.0,130.0)
+  \put(0.0,0.0){\bfseries när}
+  \put(55.0,0.0){hon}
+  \put(101.0,0.0){grät}
+  \put(147.0,0.0){och}
+  \put(202.0,0.0){ropade}
+  \put(266.0,0.0){\bfseries men}
+  \put(321.0,0.0){de}
+  \put(367.0,0.0){hjälpte}
+  \put(440.0,0.0){inte}
+  \put(486.0,0.0){henne}
+  \put(541.0,0.0){.}
+  \put(0.0,15.0){{\tiny SCONJ}}
+  \put(55.0,15.0){{\tiny PRON}}
+  \put(101.0,15.0){{\tiny VERB}}
+  \put(147.0,15.0){{\tiny CCONJ}}
+  \put(202.0,15.0){{\tiny VERB}}
+  \put(266.0,15.0){{\tiny CCONJ}}
+  \put(321.0,15.0){{\tiny PRON}}
+  \put(367.0,15.0){{\tiny VERB}}
+  \put(440.0,15.0){{\tiny PART}}
+  \put(486.0,15.0){{\tiny PRON}}
+  \put(541.0,15.0){{\tiny PUNCT}}
 \end{picture}
 
-## Literal annotation
-\setlength{\unitlength}{0.45mm}
-\begin{picture}(195.0,110.0)
-  \put(0.0,0.0){en}
-  \put(37.0,0.0){lång}
-  \put(83.0,0.0){\bfseries bus}
-  \put(129.0,0.0){\bfseries resa}
-  \put(0.0,15.0){{\tiny NUM/DET/...}}
-  \put(37.0,15.0){{\tiny ADJ}}
-  \put(83.0,15.0){{\tiny NOUN}}
-  \put(129.0,15.0){{\tiny NOUN/VERB}}
+\bigskip
+\bigskip
+
+- när hon grät och ropade ~~men~~ \underline{hjälpte} de inte henne. 
+- ~~när~~ hon \underline{grät} och ropade, men de hjälpte inte henne.
+
+## Exempel 1
+\bigskip
+\bigskip
+\bigskip
+
+\small
+
+\setlength{\unitlength}{0.193mm}
+\begin{picture}(758.0,110.0)
+  \put(0.0,0.0){\bfseries när}
+  \put(55.0,0.0){hon}
+  \put(101.0,0.0){grät}
+  \put(147.0,0.0){och}
+  \put(202.0,0.0){ropade}
+  \put(266.0,0.0){\bfseries men}
+  \put(321.0,0.0){de}
+  \put(367.0,0.0){hjälpte}
+  \put(440.0,0.0){inte}
+  \put(486.0,0.0){henne}
+  \put(541.0,0.0){.}
+  \put(0.0,15.0){{\tiny SCONJ}}
+  \put(55.0,15.0){{\tiny PRON}}
+  \put(101.0,15.0){{\tiny VERB}}
+  \put(147.0,15.0){{\tiny CCONJ}}
+  \put(202.0,15.0){{\tiny VERB}}
+  \put(266.0,15.0){{\tiny CCONJ}}
+  \put(321.0,15.0){{\tiny PRON}}
+  \put(367.0,15.0){{\tiny VERB}}
+  \put(440.0,15.0){{\tiny PART}}
+  \put(486.0,15.0){{\tiny PRON}}
+  \put(541.0,15.0){{\tiny PUNCT}}
+  \put(60.5,30.0){\oval(98.02970297029702,66.66666666666667)[t]}
+  \put(11.485148514851488,35.0){\vector(0,-1){5.0}}
+  \put(51.5,66.33333333333334){{\tiny mark}}
+  \put(88.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(68.26086956521739,35.0){\vector(0,-1){5.0}}
+  \put(76.75,49.66666666666667){{\tiny nsubj}}
+  \put(246.0,30.0){\color{SecondaryColor} \oval(263.8721804511278,100.0)[t]}
+  \put(114.5639097744361,35.0){\color{SecondaryColor} \vector(0,-1){5.0}}
+  \put(244.75,83.0){{\color{SecondaryColor} \tiny advcl}}
+  \put(184.5,30.0){\oval(49.54545454545455,33.333333333333336)[t]}
+  \put(159.72727272727272,35.0){\vector(0,-1){5.0}}
+  \put(180.0,49.66666666666667){{\tiny cc}}
+  \put(171.5,30.0){\oval(98.02970297029702,66.66666666666667)[t]}
+  \put(220.5148514851485,35.0){\vector(0,-1){5.0}}
+  \put(162.5,66.33333333333334){{\tiny conj}}
+  \put(326.5,30.0){\oval(98.02970297029702,66.66666666666667)[t]}
+  \put(277.4851485148515,35.0){\vector(0,-1){5.0}}
+  \put(322.0,66.33333333333334){{\tiny cc}}
+  \put(354.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(334.2608695652174,35.0){\vector(0,-1){5.0}}
+  \put(342.75,49.66666666666667){{\tiny nsubj}}
+  \put(381.0,110.0){\color{SecondaryColor} \vector(0,-1){80.0}}
+  \put(385.0,100.0){{\color{SecondaryColor} \tiny root}}
+  \put(423.5,30.0){\oval(68.89041095890411,33.333333333333336)[t]}
+  \put(457.94520547945206,35.0){\vector(0,-1){5.0}}
+  \put(410.0,49.66666666666667){{\tiny advmod}}
+  \put(446.5,30.0){\oval(116.47899159663865,66.66666666666667)[t]}
+  \put(504.73949579831935,35.0){\vector(0,-1){5.0}}
+  \put(437.5,66.33333333333334){{\tiny obj}}
+  \put(473.0,30.0){\color{SecondaryColor} \oval(172.27586206896552,100.0)[t]}
+  \put(559.1379310344828,35.0){\color{SecondaryColor} \vector(0,-1){5.0}}
+  \put(450.75,83.0){{\tiny \color{SecondaryColor} punct}}
 \end{picture}
 
-## Literal annotation
-\setlength{\unitlength}{0.45mm}
+
+\bigskip
+\bigskip
+
+- \color{SecondaryColor} när hon grät och ropade ~~men~~ \underline{hjälpte} de inte henne.
+- \color{black} ~~när~~ hon \underline{grät} och ropade, men de hjälpte inte henne.
+ 
+## Exempel 1
+\bigskip
+\bigskip
+
+\small
+
+\setlength{\unitlength}{0.193mm}
+\begin{picture}(686.0,130.0)
+  \put(0.0,0.0){\bfseries när}
+  \put(55.0,0.0){hon}
+  \put(101.0,0.0){grät}
+  \put(147.0,0.0){och}
+  \put(202.0,0.0){ropade}
+  \put(266.0,0.0){\bfseries men}
+  \put(321.0,0.0){de}
+  \put(367.0,0.0){hjälpte}
+  \put(440.0,0.0){inte}
+  \put(486.0,0.0){henne}
+  \put(541.0,0.0){.}
+  \put(0.0,15.0){{\tiny SCONJ}}
+  \put(55.0,15.0){{\tiny PRON}}
+  \put(101.0,15.0){{\tiny VERB}}
+  \put(147.0,15.0){{\tiny CCONJ}}
+  \put(202.0,15.0){{\tiny VERB}}
+  \put(266.0,15.0){{\tiny CCONJ}}
+  \put(321.0,15.0){{\tiny PRON}}
+  \put(367.0,15.0){{\tiny VERB}}
+  \put(440.0,15.0){{\tiny PART}}
+  \put(486.0,15.0){{\tiny PRON}}
+  \put(541.0,15.0){{\tiny PUNCT}}
+  \put(60.5,30.0){\oval(98.02970297029702,66.66666666666667)[t]}
+  \put(11.485148514851488,35.0){\vector(0,-1){5.0}}
+  \put(51.5,66.33333333333334){{\tiny mark}}
+  \put(88.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(68.26086956521739,35.0){\vector(0,-1){5.0}}
+  \put(76.75,49.66666666666667){{\tiny nsubj}}
+  \put(116.0,130.0){\color{SecondaryColor} \vector(0,-1){100.0}}
+  \put(121.0,120.0){{\tiny \color{SecondaryColor} root}}
+  \put(184.5,30.0){\oval(49.54545454545455,33.333333333333336)[t]}
+  \put(159.72727272727272,35.0){\vector(0,-1){5.0}}
+  \put(180.0,49.66666666666667){{\tiny cc}}
+  \put(171.5,30.0){\oval(98.02970297029702,66.66666666666667)[t]}
+  \put(220.5148514851485,35.0){\vector(0,-1){5.0}}
+  \put(162.5,66.33333333333334){{\tiny conj}}
+  \put(326.5,30.0){\oval(98.02970297029702,66.66666666666667)[t]}
+  \put(277.4851485148515,35.0){\vector(0,-1){5.0}}
+  \put(322.0,66.33333333333334){{\tiny cc}}
+  \put(354.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(334.2608695652174,35.0){\vector(0,-1){5.0}}
+  \put(342.75,49.66666666666667){{\tiny nsubj}}
+  \put(254.0,30.0){\color{SecondaryColor} \oval(264.8721804511278,100.0)[t]}
+  \put(386.43609022556393,35.0){\color{SecondaryColor} \vector(0,-1){5.0}}
+  \put(245.0,83.0){{\tiny \color{SecondaryColor} conj}}
+  \put(423.5,30.0){\oval(68.89041095890411,33.333333333333336)[t]}
+  \put(457.94520547945206,35.0){\vector(0,-1){5.0}}
+  \put(410.0,49.66666666666667){{\tiny advmod}}
+  \put(446.5,30.0){\oval(116.47899159663865,66.66666666666667)[t]}
+  \put(504.73949579831935,35.0){\vector(0,-1){5.0}}
+  \put(437.5,66.33333333333334){{\tiny obj}}
+  \put(341.0,30.0){\color{SecondaryColor} \oval(439.3181818181818,133.33333333333334)[t]}
+  \put(560.6590909090909,35.0){\color{SecondaryColor} \vector(0,-1){5.0}}
+  \put(329.75,99.66666666666667){{\color{SecondaryColor} \tiny punct}}
+\end{picture}
+
+\bigskip
+\bigskip
+
+- när hon grät och ropade ~~men~~ \underline{hjälpte} de inte henne.
+- \color{SecondaryColor} ~~när~~ hon \underline{grät} och ropade, men de hjälpte inte henne. 
+
+## Riktlinjer
+1. analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering
+2. \textcolor{SecondaryColor}{medelväg mellan s.k. \textit{ordagrann} och \textit{distributionell} annotering:}
+   - \textcolor{SecondaryColor}{LEMMA, UPOS och FEATS beskriver ordformen i sig}  
+   - \textcolor{SecondaryColor}{HEAD och DEPREL tilldelas baserat på hur ordet används}
+3. tydliga transferfenomen annoteras enligt riktlinjerna för källspråket
+
+## Exempel 2
+\setlength{\unitlength}{0.195mm}
+\begin{picture}(624.0,130.0)
+  \put(0.0,0.0){Dessutom}
+  \put(82.0,0.0){har}
+  \put(128.0,0.0){religionen}
+  \put(228.0,0.0){en}
+  \put(265.0,0.0){\bfseries väldig}
+  \put(419.0,0.0){viktig}
+  \put(483.0,0.0){betydelse}
+  \put(0.0,15.0){{\tiny ADV}}
+  \put(82.0,15.0){{\tiny VERB}}
+  \put(128.0,15.0){{\tiny NOUN}}
+  \put(228.0,15.0){{\tiny DET}}
+  \put(265.0,15.0){{\tiny ADJ}}
+  \put(419.0,15.0){{\tiny ADJ}}
+  \put(483.0,15.0){{\tiny NOUN}}
+\end{picture}
+
+\bigskip \bigskip
+
+\textcolor{white}{- Dessutom har religionen en väldigt viktig betydelse}
+
+## Exempel 2
+\setlength{\unitlength}{0.195mm}
+\begin{picture}(624.0,130.0)
+  \put(0.0,0.0){Dessutom}
+  \put(82.0,0.0){har}
+  \put(128.0,0.0){religionen}
+  \put(228.0,0.0){en}
+  \put(265.0,0.0){\bfseries väldig}
+  \put(419.0,0.0){viktig}
+  \put(483.0,0.0){betydelse}
+  \put(0.0,15.0){{\tiny ADV}}
+  \put(82.0,15.0){{\tiny VERB}}
+  \put(128.0,15.0){{\tiny NOUN}}
+  \put(228.0,15.0){{\tiny DET}}
+  \put(265.0,15.0){{\tiny ADJ}}
+  \put(419.0,15.0){{\tiny ADJ}}
+  \put(483.0,15.0){{\tiny NOUN}}
+  \put(51.0,30.0){\oval(78.34146341463415,33.333333333333336)[t]}
+  \put(11.829268292682926,35.0){\vector(0,-1){5.0}}
+  \put(37.5,49.66666666666667){{\tiny advmod}}
+  \put(97.0,130.0){\vector(0,-1){100.0}}
+  \put(102.0,120.0){{\tiny root}}
+  \put(125.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(144.73913043478262,35.0){\vector(0,-1){5.0}}
+  \put(113.75,49.66666666666667){{\tiny nsubj}}
+  \put(365.5,30.0){\oval(253.8235294117647,100.0)[t]}
+  \put(238.58823529411765,35.0){\vector(0,-1){5.0}}
+  \put(358.75,83.0){{\tiny det}}
+  \put(384.0,30.0){\oval(216.62385321100916,66.66666666666667)[t]}
+  \put(275.6880733944954,35.0){\vector(0,-1){5.0}}
+  \put(375.0,66.33333333333334){{\tiny amod}}
+  \put(461.0,30.0){\oval(59.3125,33.333333333333336)[t]}
+  \put(431.34375,35.0){\vector(0,-1){5.0}}
+  \put(452.0,49.66666666666667){{\tiny amod}}
+  \put(302.5,30.0){\oval(400.25187032418955,133.33333333333334)[t]}
+  \put(502.6259351620948,35.0){\vector(0,-1){5.0}}
+  \put(295.75,99.66666666666667){{\tiny obj}}
+\end{picture}
+
+\bigskip \bigskip
+
+\textcolor{white}{- Dessutom har religionen en väldigt viktig betydelse}
+
+## Exempel 2
+\bigskip
+\setlength{\unitlength}{0.195mm}
+\begin{picture}(624.0,110.0)
+  \put(0.0,0.0){Dessutom}
+  \put(82.0,0.0){har}
+  \put(128.0,0.0){religionen}
+  \put(228.0,0.0){en}
+  \put(265.0,0.0){\bfseries väldig}
+  \put(419.0,0.0){viktig}
+  \put(483.0,0.0){betydelse}
+  \put(0.0,15.0){{\tiny ADV}}
+  \put(82.0,15.0){{\tiny VERB}}
+  \put(128.0,15.0){{\tiny NOUN}}
+  \put(228.0,15.0){{\tiny DET}}
+  \put(265.0,15.0){{\tiny \color{SecondaryColor} ADV}}
+  \put(419.0,15.0){{\tiny ADJ}}
+  \put(483.0,15.0){{\tiny NOUN}}
+  \put(51.0,30.0){\oval(78.34146341463415,33.333333333333336)[t]}
+  \put(11.829268292682926,35.0){\vector(0,-1){5.0}}
+  \put(37.5,49.66666666666667){{\tiny advmod}}
+  \put(97.0,110.0){\vector(0,-1){80.0}}
+  \put(102.0,100.0){{\tiny root}}
+  \put(125.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(144.73913043478262,35.0){\vector(0,-1){5.0}}
+  \put(113.75,49.66666666666667){{\tiny nsubj}}
+  \put(365.5,30.0){\oval(253.8235294117647,66.66666666666667)[t]}
+  \put(238.58823529411765,35.0){\vector(0,-1){5.0}}
+  \put(358.75,66.33333333333334){{\tiny det}}
+  \put(352.0,30.0){\color{SecondaryColor} \oval(152.05194805194805,33.333333333333336)[t]}
+  \put(275.97402597402595,35.0){\color{SecondaryColor} \vector(0,-1){5.0}}
+  \put(338.5,49.66666666666667){{\tiny \color{SecondaryColor} advmod}}
+  \put(461.0,30.0){\oval(59.3125,33.333333333333336)[t]}
+  \put(431.34375,35.0){\vector(0,-1){5.0}}
+  \put(452.0,49.66666666666667){{\tiny amod}}
+  \put(302.5,30.0){\oval(400.25187032418955,100.0)[t]}
+  \put(502.6259351620948,35.0){\vector(0,-1){5.0}}
+  \put(295.75,83.0){{\tiny obj}}
+\end{picture}
+
+\bigskip \bigskip
+
+- Dessutom har religionen en väldigt viktig betydelse
+
+## Exempel 2
+\bigskip
+\setlength{\unitlength}{0.195mm}
+\begin{picture}(624.0,110.0)
+  \put(0.0,0.0){Dessutom}
+  \put(82.0,0.0){har}
+  \put(128.0,0.0){religionen}
+  \put(228.0,0.0){en}
+  \put(265.0,0.0){\bfseries väldig}
+  \put(419.0,0.0){viktig}
+  \put(483.0,0.0){betydelse}
+  \put(0.0,15.0){{\tiny ADV}}
+  \put(82.0,15.0){{\tiny VERB}}
+  \put(128.0,15.0){{\tiny NOUN}}
+  \put(228.0,15.0){{\tiny DET}}
+  \put(265.0,15.0){{\tiny \color{SecondaryColor} ADJ}}
+  \put(419.0,15.0){{\tiny ADJ}}
+  \put(483.0,15.0){{\tiny NOUN}}
+  \put(51.0,30.0){\oval(78.34146341463415,33.333333333333336)[t]}
+  \put(11.829268292682926,35.0){\vector(0,-1){5.0}}
+  \put(37.5,49.66666666666667){{\tiny advmod}}
+  \put(97.0,110.0){\vector(0,-1){80.0}}
+  \put(102.0,100.0){{\tiny root}}
+  \put(125.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(144.73913043478262,35.0){\vector(0,-1){5.0}}
+  \put(113.75,49.66666666666667){{\tiny nsubj}}
+  \put(365.5,30.0){\oval(253.8235294117647,66.66666666666667)[t]}
+  \put(238.58823529411765,35.0){\vector(0,-1){5.0}}
+  \put(358.75,66.33333333333334){{\tiny det}}
+  \put(352.0,30.0){\oval(152.05194805194805,33.333333333333336)[t]}
+  \put(275.97402597402595,35.0){\vector(0,-1){5.0}}
+  \put(338.5,49.66666666666667){{\tiny advmod}}
+  \put(461.0,30.0){\oval(59.3125,33.333333333333336)[t]}
+  \put(431.34375,35.0){\vector(0,-1){5.0}}
+  \put(452.0,49.66666666666667){{\tiny amod}}
+  \put(302.5,30.0){\oval(400.25187032418955,100.0)[t]}
+  \put(502.6259351620948,35.0){\vector(0,-1){5.0}}
+  \put(295.75,83.0){{\tiny obj}}
+\end{picture}
+
+\bigskip \bigskip
+
+- Dessutom har religionen en väldigt viktig betydelse
+
+## Riktlinjer
+1. analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering
+2. medelväg mellan s.k. _ordagrann_ och _distributionell_ annotering:
+   - LEMMA, UPOS och FEATS beskriver ordformen i sig  
+   - HEAD och DEPREL tilldelas baserat på hur ordet används
+3. \textcolor{SecondaryColor}{tydliga transferfenomen annoteras enligt riktlinjerna för källspråket}
+
+## Exempel 3
+\setlength{\unitlength}{0.4mm}
 \begin{picture}(195.0,110.0)
   \put(0.0,0.0){en}
   \put(37.0,0.0){lång}
@@ -139,108 +477,6 @@ Arianna Masciolini, Aleksandrs Berdicevskis, Maria Irena Szawerna, and Elena Vol
   \put(37.0,15.0){{\tiny ADJ}}
   \put(83.0,15.0){{\tiny NOUN}}
   \put(129.0,15.0){{\tiny NOUN}}
-  \put(0.0,-13.0){{\scriptsize {\slshape a}}}
-  \put(37.0,-13.0){{\scriptsize {\slshape long}}}
-  \put(83.0,-13.0){{\scriptsize {\slshape ?}}}
-  \put(129.0,-13.0){{\scriptsize {\slshape trip}}}
-\end{picture}
-
-## Correction-aware annotation
-\setlength{\unitlength}{0.45mm}
-\begin{picture}(195.0,110.0)
-  \put(0.0,0.0){en}
-  \put(37.0,0.0){lång}
-  \put(129.0,0.0){\bfseries bussresa}
-  \put(0.0,15.0){{\tiny DET}}
-  \put(37.0,15.0){{\tiny ADJ}}
-  \put(129.0,15.0){{\tiny NOUN}}
-  \put(0.0,-13.0){{\scriptsize {\slshape a}}}
-  \put(37.0,-13.0){{\scriptsize {\slshape long}}}
-  \put(129.0,-13.0){{\scriptsize {\slshape bus.trip}}}
-\end{picture}
-
-## Correction-aware annotation
-\setlength{\unitlength}{0.45mm}
-\begin{picture}(195.0,110.0)
-  \put(0.0,0.0){en}
-  \put(37.0,0.0){lång}
-  \put(129.0,0.0){\bfseries bussresa}
-  \put(0.0,15.0){{\tiny DET}}
-  \put(37.0,15.0){{\tiny ADJ}}
-  \put(129.0,15.0){{\tiny NOUN}}
-  \put(0.0,-13.0){{\scriptsize {\slshape a}}}
-  \put(37.0,-13.0){{\scriptsize {\slshape long}}}
-  \put(129.0,-13.0){{\scriptsize {\slshape bus.trip}}}
-  \put(74.5,30.0){\oval(126.67441860465117,100.0)[t]}
-  \put(11.162790697674417,35.0){\vector(0,-1){5.0}}
-  \put(67.75,83.0){{\tiny det}}
-  \put(93.0,30.0){\oval(88.73913043478261,66.66666666666667)[t]}
-  \put(48.630434782608695,35.0){\vector(0,-1){5.0}}
-  \put(84.0,66.33333333333334){{\tiny amod}}
-  \put(144.0,110.0){\vector(0,-1){80.0}}
-  \put(149.0,100.0){{\tiny root}}
-\end{picture}
-
-## Correction-aware annotation
-\setlength{\unitlength}{0.45mm}
-\begin{picture}(195.0,110.0)
-  \put(0.0,0.0){en}
-  \put(37.0,0.0){lång}
-  \put(83.0,0.0){\bfseries bus}
-  \put(129.0,0.0){\bfseries resa}
-  \put(0.0,15.0){{\tiny DET}}
-  \put(37.0,15.0){{\tiny ADJ}}
-  \put(83.0,15.0){{\tiny NOUN}}
-  \put(129.0,15.0){{\tiny NOUN}}
-  \put(0.0,-13.0){{\scriptsize {\slshape a}}}
-  \put(37.0,-13.0){{\scriptsize {\slshape long}}}
-  \put(83.0,-13.0){{\scriptsize {\slshape bus}}}
-  \put(129.0,-13.0){{\scriptsize {\slshape trip}}}
-\end{picture}
-
-## Correction-aware annotation
-\setlength{\unitlength}{0.45mm}
-\begin{picture}(195.0,110.0)
-  \put(0.0,0.0){en}
-  \put(37.0,0.0){lång}
-  \put(83.0,0.0){\bfseries bus}
-  \put(129.0,0.0){\bfseries resa}
-  \put(0.0,15.0){{\tiny DET}}
-  \put(37.0,15.0){{\tiny ADJ}}
-  \put(83.0,15.0){{\tiny NOUN}}
-  \put(129.0,15.0){{\tiny NOUN}}
-  \put(0.0,-13.0){{\scriptsize {\slshape a}}}
-  \put(37.0,-13.0){{\scriptsize {\slshape long}}}
-  \put(83.0,-13.0){{\scriptsize {\slshape bus}}}
-  \put(129.0,-13.0){{\scriptsize {\slshape trip}}}
-  \put(51,30.0){\oval(79.3855421686747,66.66666666666667)[t]}
-  \put(11.2,35.0){\vector(0,-1){5.0}}
-  \put(44.75,66.33333333333334){{\tiny det}}
-  \put(68.2,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
-  \put(48.630434782608695,35.0){\vector(0,-1){5.0}}
-  \put(61.0,49.66666666666667){{\tiny amod}}
-  \put(93.0,110.0){\vector(0,-1){80.0}}
-  \put(97.0,80.0){{\tiny root}}
-  \put(115.5,30.0){\oval(40,33.333333333333336)[t]}
-  \put(135.25,35.0){\vector(0,-1){5.0}}
-  \put(105.5,49.66666666666667){{\color{SecondaryColor} \tiny goeswith}}
-\end{picture}
-
-## Correction-aware annotation
-\setlength{\unitlength}{0.45mm}
-\begin{picture}(195.0,110.0)
-  \put(0.0,0.0){en}
-  \put(37.0,0.0){lång}
-  \put(83.0,0.0){\bfseries bus}
-  \put(129.0,0.0){\bfseries resa}
-  \put(0.0,15.0){{\tiny DET}}
-  \put(37.0,15.0){{\tiny ADJ}}
-  \put(83.0,15.0){{\tiny NOUN}}
-  \put(129.0,15.0){{\tiny NOUN}}
-  \put(0.0,-13.0){{\scriptsize {\slshape a}}}
-  \put(37.0,-13.0){{\scriptsize {\slshape long}}}
-  \put(83.0,-13.0){{\scriptsize {\slshape bus}}}
-  \put(129.0,-13.0){{\scriptsize {\slshape trip}}}
   \put(74.5,30.0){\oval(126.67441860465117,100.0)[t]}
   \put(11.162790697674417,35.0){\vector(0,-1){5.0}}
   \put(67.75,83.0){{\tiny det}}
@@ -254,7 +490,10 @@ Arianna Masciolini, Aleksandrs Berdicevskis, Maria Irena Szawerna, and Elena Vol
   \put(149.0,100.0){{\tiny root}}
 \end{picture}
 
-## Transfer-aware annotation
+- en lång bussresa
+- __L1__: engelska
+
+## Exempel 4 <!-- TODO: replace with/add "la mode" example -->
 \setlength{\unitlength}{0.21mm}
 \begin{picture}(617.0,130.0)
   \put(0.0,0.0){det}
@@ -273,7 +512,7 @@ Arianna Masciolini, Aleksandrs Berdicevskis, Maria Irena Szawerna, and Elena Vol
   \put(429.0,15.0){{\tiny PROPN}}
 \end{picture}
 
-## Transfer-aware annotation
+## Exempel 4
 \setlength{\unitlength}{0.21mm}
 \begin{picture}(617.0,130.0)
   \put(0.0,0.0){det}
@@ -295,7 +534,7 @@ Arianna Masciolini, Aleksandrs Berdicevskis, Maria Irena Szawerna, and Elena Vol
   \put(145.75,49.66666666666667){{\tiny \color{SecondaryColor} goeswith}}
 \end{picture}
 
-## Transfer-aware annotation
+## Exempel 4
 \setlength{\unitlength}{0.21mm}
 \begin{picture}(617.0,130.0)
   \put(0.0,0.0){det}
@@ -321,7 +560,9 @@ Arianna Masciolini, Aleksandrs Berdicevskis, Maria Irena Szawerna, and Elena Vol
   \put(429.0,-11.0){{\scriptsize {\slshape Sweden}}}
 \end{picture}
 
-## Transfer-aware annotation
+## Exempel 4
+\bigskip \smallskip
+
 \setlength{\unitlength}{0.21mm}
 \begin{picture}(617.0,130.0)
   \put(0.0,0.0){det}
@@ -367,38 +608,17 @@ Arianna Masciolini, Aleksandrs Berdicevskis, Maria Irena Szawerna, and Elena Vol
   \put(332.75,83.0){{\tiny obl}}
 \end{picture}
 
-## Annotators
-- Sasha (L1: Russian)
-- Maria (L1: Polish)
-- Arianna (L1: Italian)
-
-And soon:
-
-- Caroline (L1: French)
-
-## Where?
 \bigskip \bigskip
 
-![](qr-code.png)
+## Tillgänglig via
+<!-- TODO: 
+      - QRs for Grew-match and Korp 
+      - download links (UD + single)
+      - link to repo for issues
+-->
 
-\centering `github.com/UniversalDependencies/UD_Swedish-SweLL`[^2]
-
-[^2]: just not yet!
-
-## When?
-- test set (500 sentences): first release \color{gray}hopefully \color{black}on November 15 as part of UD 2.17
-- dev set (another 500 sentences): as part of UD 2.18
-- train set (4000 sentences!): we'll see about that
-
-## Tackar _all_ som hjälpte oss!
-
-\bigskip
-\bigskip
-\bigskip
-
-![](sbx.png)
-
-\bigskip
-\bigskip
-
-![](unidive.png)
+## Tack!
+<!-- TODO:
+      - tree for thank you with error
+      - logos in a single row
+-->
