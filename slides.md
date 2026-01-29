@@ -40,7 +40,7 @@ Finse <MC><i>aveva paura</i><c>che aveva paura</c>
 ## Begränsningar
 - olika format som är inkompatibla med varandra
 - manuell taggning
-- grovkorniga felkategoritaggar (TODO: bättre översättning för "coarse-grained"?)
+- översiktliga felkategoritaggar
 - snäv inriktning på språkliga fel
 
 ## Universal Dependencies
@@ -77,7 +77,7 @@ Arianna Masciolini, Aleksandrs Berdicevskis, Maria Irena Szawerna, and Elena Vol
 
 |   **språk** | **namn**  | **meningar** | **parallell** | **tillgänglig** |
 | ----------: | --------- | -----------: | :-----------: | :-------------: |
-|   kinesiska | CFL       |          451 | (\checkmark)  |   \checkmark    |
+|   kinesiska | CFL       |          451 |  \checkmark   |   \checkmark    |
 |    engelska | ESL       |         5124 |  \checkmark   |  (\checkmark)   |
 |    engelska | ESLSpok   |         2320 |               |   \checkmark    |
 |    grekiska | GLCII     |         670+ |  \checkmark   |     snart!      |
@@ -611,14 +611,21 @@ SweLL (Swedish Learner Language) korpusen:
 \bigskip \bigskip
 
 ## Tillgänglig via
-<!-- TODO: 
-      - QRs for Grew-match and Korp 
-      - download links (UD + single)
-      - link to repo for issues
--->
+\bigskip
+
+![](qr-code.png)
+
+- \small `spraakbanken.gu.se/resurser/ud217_swedish-swell`
+- \small `github.com/universaldependencies/UD_Swedish-SweLL`
 
 ## Tack!
-<!-- TODO:
-      - tree for thank you with error
-      - logos in a single row
--->
+<!-- TODO: regenerate tree in Haskell -->
+
+\bigskip \bigskip
+
+
+\centering
+![](tack.svg)
+
+\bigskip \bigskip \bigskip \bigskip
+![](help.png)
