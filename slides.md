@@ -5,7 +5,7 @@ author: "Arianna Masciolini"
 theme: "lucid"
 logo: "gu.png"
 date: "6 februari 2026"
-institute: "Språkbanken text"
+institute: "Språkbanken Text"
 ---
 
 ## Andraspråkskorpusar
@@ -40,7 +40,7 @@ Finse <MC><i>aveva paura</i><c>che aveva paura</c>
 ## Begränsningar
 - olika format som är inkompatibla med varandra
 - manuell taggning
-- översiktliga felkategoritaggar
+- grovkorniga felkategoritaggar
 - snäv inriktning på språkliga fel
 
 ## Universal Dependencies
@@ -58,7 +58,7 @@ Universal Dependencies är:
 - befintliga __parsrar__ underlättar annoteringen
 - __detaljerade morfosyntaktiska analyser__ kan användas för att studera L2-grammatik i stort
 - att analyserna är __tvärspråkligt konsekventa__\* gör det möjligt att jämföra:
-  - andraspråksproduktioner med målspråket
+  - andraspråksproduktionerna med målspråket
   - andraspråket med modersmålet hos samma grupp
   - olika andraspråk hos samma grupp
 
@@ -96,24 +96,26 @@ SweLL (Swedish Learner Language) korpusen:
 - är pseudonymiserad och annoterad med normaliseringar och felkategoritaggar
 
 ## Annoterare
+\bigskip 
+
 - första 510 meningar (med i UD 2.17):
   - Aleksandrs Berdicevskis (L1: ryska)
   - Maria Irena Szawerna (L1: polska)
-  - Arianna Masciolini (L1: italienska)
+  - Arianna Masciolini (L1: italienska) \pause
 - ytterligare ~140 meningar skrivna av elever med franska som modersmål eller skolspråk:
   - Caroline Grand-Clement (L1: franska)
   - Arianna Masciolini (L1: italienska)
 
 ## Riktlinjer
 1. analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering
-2. medelväg mellan s.k. _ordagrann_ och _distributionell_ annotering:
+2. medelväg mellan s.k. _bokstavlig_ och _distributionell_ annotering:
    - LEMMA, UPOS och FEATS beskriver ordformen i sig  
    - HEAD och DEPREL tilldelas baserat på hur ordet används
 3. tydliga transferfenomen annoteras enligt riktlinjerna för källspråket
 
 ## Riktlinjer
 1. \textcolor{SecondaryColor}{analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering}
-2. medelväg mellan s.k. _ordagrann_ och _distributionell_ annotering:
+2. medelväg mellan s.k. _bokstavlig_ och _distributionell_ annotering:
    - LEMMA, UPOS och FEATS beskriver ordformen i sig  
    - HEAD och DEPREL tilldelas baserat på hur ordet används
 3. tydliga transferfenomen annoteras enligt riktlinjerna för källspråket
@@ -300,7 +302,7 @@ SweLL (Swedish Learner Language) korpusen:
 
 ## Riktlinjer
 1. analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering
-2. \textcolor{SecondaryColor}{medelväg mellan s.k. \textit{ordagrann} och \textit{distributionell} annotering:}
+2. \textcolor{SecondaryColor}{medelväg mellan s.k. \textit{bokstavlig} och \textit{distributionell} annotering:}
    - \textcolor{SecondaryColor}{LEMMA, UPOS och FEATS beskriver ordformen i sig}  
    - \textcolor{SecondaryColor}{HEAD och DEPREL tilldelas baserat på hur ordet används}
 3. tydliga transferfenomen annoteras enligt riktlinjerna för källspråket
@@ -461,7 +463,7 @@ SweLL (Swedish Learner Language) korpusen:
 
 ## Riktlinjer
 1. analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering
-2. medelväg mellan s.k. _ordagrann_ och _distributionell_ annotering:
+2. medelväg mellan s.k. _bokstavlig_ och _distributionell_ annotering:
    - LEMMA, UPOS och FEATS beskriver ordformen i sig  
    - HEAD och DEPREL tilldelas baserat på hur ordet används
 3. \textcolor{SecondaryColor}{tydliga transferfenomen annoteras enligt riktlinjerna för källspråket}
@@ -615,8 +617,8 @@ SweLL (Swedish Learner Language) korpusen:
 
 ![](qr-code.png)
 
-- \small `spraakbanken.gu.se/resurser/ud217_swedish-swell`
 - \small `github.com/universaldependencies/UD_Swedish-SweLL`
+- \small `spraakbanken.gu.se/resurser/ud217_swedish-swell`
 
 ## Tack!
 <!-- TODO: regenerate tree in Haskell -->
