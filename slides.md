@@ -44,10 +44,8 @@ Finse <MC><i>aveva paura</i><c>che aveva paura</c>
 - snäv inriktning på språkliga fel
 
 ## Universal Dependencies
-Universal Dependencies är:
-
 - ett ramverk för att skapa morfosyntaktiska analyser som är
-  - trärspråkligt konsekventa
+  - tvärspråkligt konsekventa
   - läsbara för både människor och maskiner
   - tillämpliga i både en- och flerspråkiga användningsscenarier
 - en växande samling trädbanker för 180+ språk
@@ -57,7 +55,7 @@ Universal Dependencies är:
 - UD:s __standardformat__ (CoNLL-U) tillgängliggör etablerade sök- och bearbetningsverktyg 
 - befintliga __parsrar__ underlättar annoteringen
 - __detaljerade morfosyntaktiska analyser__ kan användas för att studera L2-grammatik i stort
-- att analyserna är __tvärspråkligt konsekventa__\* gör det möjligt att jämföra:
+- __tvärspråklig konsekvens__\* gör det möjligt att jämföra:
   - andraspråksproduktionerna med målspråket
   - andraspråket med modersmålet hos samma grupp
   - olika andraspråk hos samma grupp
@@ -75,21 +73,21 @@ Arianna Masciolini, Aleksandrs Berdicevskis, Maria Irena Szawerna, and Elena Vol
 ## Andraspråksträdbanker
 \bigskip
 
-|   **språk** | **namn**  | **meningar** | **parallell** | **tillgänglig** |
-| ----------: | --------- | -----------: | :-----------: | :-------------: |
-|   kinesiska | CFL       |          451 |  \checkmark   |   \checkmark    |
-|    engelska | ESL       |         5124 |  \checkmark   |  (\checkmark)   |
-|    engelska | ESLSpok   |         2320 |               |   \checkmark    |
-|    grekiska | GLCII     |         670+ |  \checkmark   |     snart!      |
-|  italienska | Valico    |          398 |  \checkmark   |   \checkmark    |
-|   koreanska | KSL       |        12977 |               |   \checkmark    |
-|       ryska |           |          500 |  \checkmark   |                 |
-|     spanska |           |          383 |               |                 |
-| **svenska** | **SweLL** |     **510+** |  \checkmark   |   \checkmark    |
-|   tjeckiska |           |        2000+ |  \checkmark   |                 |
+|                           **språk** | **namn**                          |                     **meningar** |             **parallell**              |            **tillgänglig**             |
+| ----------------------------------: | --------------------------------- | -------------------------------: | :------------------------------------: | :------------------------------------: |
+|                           kinesiska | CFL                               |                              451 |               \checkmark               |               \checkmark               |
+|                            engelska | ESL                               |                             5124 |               \checkmark               |              (\checkmark)              |
+|                            engelska | ESLSpok                           |                             2320 |                                        |               \checkmark               |
+|                            grekiska | GLCII                             |                             670+ |               \checkmark               |                 snart!                 |
+|                          italienska | Valico                            |                              398 |               \checkmark               |               \checkmark               |
+|                           koreanska | KSL                               |                            12977 |                                        |               \checkmark               |
+|                               ryska |                                   |                              500 |               \checkmark               |                                        |
+|                             spanska |                                   |                              383 |                                        |                                        |
+| \textcolor{SecondaryColor}{svenska} | \textcolor{SecondaryColor}{SweLL} | \textcolor{SecondaryColor}{510+} | \textcolor{SecondaryColor}{\checkmark} | \textcolor{SecondaryColor}{\checkmark} |
+|                           tjeckiska |                                   |                            2000+ |               \checkmark               |                                        |
 
 ## Källkorpus
-SweLL (Swedish Learner Language) korpusen:
+### SweLL (Swedish Learner Language) korpusen
 
 - består av elevuppsatser skrivna inom ramen för utbildning i svenska som andraspråk
 - representerar vuxna inlärare med olika språkbakgrund och kunskapsnivåer
@@ -98,23 +96,28 @@ SweLL (Swedish Learner Language) korpusen:
 ## Annoterare
 \bigskip 
 
-- första 510 meningar (med i UD 2.17):
-  - Aleksandrs Berdicevskis (L1: ryska)
-  - Maria Irena Szawerna (L1: polska)
-  - Arianna Masciolini (L1: italienska) \pause
-- ytterligare ~140 meningar skrivna av elever med franska som modersmål eller skolspråk:
-  - Caroline Grand-Clement (L1: franska)
-  - Arianna Masciolini (L1: italienska)
+### Första 510 meningar (med i UD 2.17)
+- Aleksandrs Berdicevskis (L1: ryska)
+- Maria Irena Szawerna (L1: polska)
+- Arianna Masciolini (L1: italienska) \pause
+
+### Ytterligare ~140 meningar
+(skrivna av elever med franska som modersmål eller skolspråk)
+
+- Caroline Grand-Clement (L1: franska)
+- Arianna Masciolini (L1: italienska)
 
 ## Riktlinjer
-1. analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering
+<!--försöker avspegla elevens inre grammatik-->
+
+1. analyserna är semantiskt konsekventa med textens normalisering
 2. medelväg mellan s.k. _bokstavlig_ och _distributionell_ annotering:
    - LEMMA, UPOS och FEATS beskriver ordformen i sig  
    - HEAD och DEPREL tilldelas baserat på hur ordet används
 3. tydliga transferfenomen annoteras enligt riktlinjerna för källspråket
 
 ## Riktlinjer
-1. \textcolor{SecondaryColor}{analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering}
+1. \textcolor{SecondaryColor}{analyserna är semantiskt konsekventa med textens normalisering}
 2. medelväg mellan s.k. _bokstavlig_ och _distributionell_ annotering:
    - LEMMA, UPOS och FEATS beskriver ordformen i sig  
    - HEAD och DEPREL tilldelas baserat på hur ordet används
@@ -301,7 +304,7 @@ SweLL (Swedish Learner Language) korpusen:
 - \color{SecondaryColor} ~~när~~ hon \underline{grät} och ropade, men de hjälpte inte henne. 
 
 ## Riktlinjer
-1. analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering
+1. analyserna är semantiskt konsekventa med textens normalisering
 2. \textcolor{SecondaryColor}{medelväg mellan s.k. \textit{bokstavlig} och \textit{distributionell} annotering:}
    - \textcolor{SecondaryColor}{LEMMA, UPOS och FEATS beskriver ordformen i sig}  
    - \textcolor{SecondaryColor}{HEAD och DEPREL tilldelas baserat på hur ordet används}
@@ -462,7 +465,7 @@ SweLL (Swedish Learner Language) korpusen:
 - Dessutom har religionen en väldigt viktig betydelse
 
 ## Riktlinjer
-1. analyserna försöker avspegla elevens inre grammatik men samtidigt vara konsekventa med textens normalisering
+1. analyserna är semantiskt konsekventa med textens normalisering
 2. medelväg mellan s.k. _bokstavlig_ och _distributionell_ annotering:
    - LEMMA, UPOS och FEATS beskriver ordformen i sig  
    - HEAD och DEPREL tilldelas baserat på hur ordet används
@@ -495,7 +498,7 @@ SweLL (Swedish Learner Language) korpusen:
 - en lång bussresa
 - __L1__: engelska
 
-## Exempel 4 <!-- TODO: replace with/add "la mode" example -->
+## Exempel 4
 \setlength{\unitlength}{0.21mm}
 \begin{picture}(617.0,130.0)
   \put(0.0,0.0){det}
@@ -612,6 +615,151 @@ SweLL (Swedish Learner Language) korpusen:
 
 \bigskip \bigskip
 
+## Exempel 5
+\bigskip
+
+\small
+\setlength{\unitlength}{0.175mm}
+\begin{picture}(724.0,130.0)
+  \put(0.0,0.0){Det}
+  \put(46.0,0.0){är}
+  \put(83.0,0.0){absolut}
+  \put(156.0,0.0){inte}
+  \put(202.0,0.0){\bfseries trenden}
+  \put(275.0,0.0){som}
+  \put(321.0,0.0){styr}
+  \put(367.0,0.0){hur}
+  \put(404.0,0.0){jag}
+  \put(450.0,0.0){väljer}
+  \put(514.0,0.0){mina}
+  \put(560.0,0.0){kläder}
+  \put(0.0,15.0){{\tiny PRON}}
+  \put(46.0,15.0){{\tiny AUX}}
+  \put(83.0,15.0){{\tiny ADV}}
+  \put(156.0,15.0){{\tiny PART}}
+  \put(202.0,15.0){{\tiny NOUN}}
+  \put(275.0,15.0){{\tiny PRON}}
+  \put(321.0,15.0){{\tiny VERB}}
+  \put(367.0,15.0){{\tiny ADV}}
+  \put(404.0,15.0){{\tiny PRON}}
+  \put(450.0,15.0){{\tiny VERB}}
+  \put(514.0,15.0){{\tiny PRON}}
+  \put(560.0,15.0){{\tiny NOUN}}
+  \put(111.0,30.0){\oval(200.5148514851485,133.33333333333334)[t]}
+  \put(10.742574257425744,35.0){\vector(0,-1){5.0}}
+  \put(102.0,99.66666666666667){{\tiny expl}}
+  \put(134.0,30.0){\oval(154.07692307692307,100.0)[t]}
+  \put(56.96153846153847,35.0){\vector(0,-1){5.0}}
+  \put(127.25,83.0){{\tiny cop}}
+  \put(152.5,30.0){\oval(116.47899159663865,66.66666666666667)[t]}
+  \put(94.26050420168067,35.0){\vector(0,-1){5.0}}
+  \put(139.0,66.33333333333334){{\tiny advmod}}
+  \put(189.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(169.26086956521738,35.0){\vector(0,-1){5.0}}
+  \put(175.5,49.66666666666667){{\tiny advmod}}
+  \put(217.0,130.0){\vector(0,-1){100.0}}
+  \put(222.0,120.0){{\tiny root}}
+  \put(308.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(288.2608695652174,35.0){\vector(0,-1){5.0}}
+  \put(296.75,49.66666666666667){{\tiny nsubj}}
+  \put(281.5,30.0){\oval(116.47899159663865,66.66666666666667)[t]}
+  \put(339.73949579831935,35.0){\vector(0,-1){5.0}}
+  \put(261.25,66.33333333333334){{\tiny acl:cleft}}
+  \put(418.5,30.0){\oval(79.3855421686747,66.66666666666667)[t]}
+  \put(378.8072289156627,35.0){\vector(0,-1){5.0}}
+  \put(405.0,66.33333333333334){{\tiny advmod}}
+  \put(437.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(417.2608695652174,35.0){\vector(0,-1){5.0}}
+  \put(425.75,49.66666666666667){{\tiny nsubj}}
+  \put(405.5,30.0){\oval(126.67441860465117,100.0)[t]}
+  \put(468.83720930232556,35.0){\vector(0,-1){5.0}}
+  \put(394.25,83.0){{\tiny ccomp}}
+  \put(547.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(527.2608695652174,35.0){\vector(0,-1){5.0}}
+  \put(526.75,49.66666666666667){{\tiny nmod:poss}}
+  \put(525.0,30.0){\oval(107.27272727272727,66.66666666666667)[t]}
+  \put(578.6363636363636,35.0){\vector(0,-1){5.0}}
+  \put(518.25,66.33333333333334){{\tiny obj}}
+\end{picture}
+
+\bigskip
+
+- incorrect plural?
+- `Definite=Ind|Number=Plur`
+
+## Exempel 5
+\bigskip
+
+\small
+\setlength{\unitlength}{0.175mm}
+\begin{picture}(724.0,130.0)
+  \put(0.0,0.0){Det}
+  \put(46.0,0.0){är}
+  \put(83.0,0.0){absolut}
+  \put(156.0,0.0){inte}
+  \put(202.0,0.0){\bfseries trenden}
+  \put(275.0,0.0){som}
+  \put(321.0,0.0){styr}
+  \put(367.0,0.0){hur}
+  \put(404.0,0.0){jag}
+  \put(450.0,0.0){väljer}
+  \put(514.0,0.0){mina}
+  \put(560.0,0.0){kläder}
+  \put(0.0,15.0){{\tiny PRON}}
+  \put(46.0,15.0){{\tiny AUX}}
+  \put(83.0,15.0){{\tiny ADV}}
+  \put(156.0,15.0){{\tiny PART}}
+  \put(202.0,15.0){{\tiny NOUN}}
+  \put(275.0,15.0){{\tiny PRON}}
+  \put(321.0,15.0){{\tiny VERB}}
+  \put(367.0,15.0){{\tiny ADV}}
+  \put(404.0,15.0){{\tiny PRON}}
+  \put(450.0,15.0){{\tiny VERB}}
+  \put(514.0,15.0){{\tiny PRON}}
+  \put(560.0,15.0){{\tiny NOUN}}
+  \put(202.0,-11.0){{\scriptsize {\slshape la mode}}}
+  \put(111.0,30.0){\oval(200.5148514851485,133.33333333333334)[t]}
+  \put(10.742574257425744,35.0){\vector(0,-1){5.0}}
+  \put(102.0,99.66666666666667){{\tiny expl}}
+  \put(134.0,30.0){\oval(154.07692307692307,100.0)[t]}
+  \put(56.96153846153847,35.0){\vector(0,-1){5.0}}
+  \put(127.25,83.0){{\tiny cop}}
+  \put(152.5,30.0){\oval(116.47899159663865,66.66666666666667)[t]}
+  \put(94.26050420168067,35.0){\vector(0,-1){5.0}}
+  \put(139.0,66.33333333333334){{\tiny advmod}}
+  \put(189.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(169.26086956521738,35.0){\vector(0,-1){5.0}}
+  \put(175.5,49.66666666666667){{\tiny advmod}}
+  \put(217.0,130.0){\vector(0,-1){100.0}}
+  \put(222.0,120.0){{\tiny root}}
+  \put(308.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(288.2608695652174,35.0){\vector(0,-1){5.0}}
+  \put(296.75,49.66666666666667){{\tiny nsubj}}
+  \put(281.5,30.0){\oval(116.47899159663865,66.66666666666667)[t]}
+  \put(339.73949579831935,35.0){\vector(0,-1){5.0}}
+  \put(261.25,66.33333333333334){{\tiny acl:cleft}}
+  \put(418.5,30.0){\oval(79.3855421686747,66.66666666666667)[t]}
+  \put(378.8072289156627,35.0){\vector(0,-1){5.0}}
+  \put(405.0,66.33333333333334){{\tiny advmod}}
+  \put(437.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(417.2608695652174,35.0){\vector(0,-1){5.0}}
+  \put(425.75,49.66666666666667){{\tiny nsubj}}
+  \put(405.5,30.0){\oval(126.67441860465117,100.0)[t]}
+  \put(468.83720930232556,35.0){\vector(0,-1){5.0}}
+  \put(394.25,83.0){{\tiny ccomp}}
+  \put(547.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(527.2608695652174,35.0){\vector(0,-1){5.0}}
+  \put(526.75,49.66666666666667){{\tiny nmod:poss}}
+  \put(525.0,30.0){\oval(107.27272727272727,66.66666666666667)[t]}
+  \put(578.6363636363636,35.0){\vector(0,-1){5.0}}
+  \put(518.25,66.33333333333334){{\tiny obj}}
+\end{picture}
+
+\bigskip
+
+- __L1__: franska
+- `Definite=Def|Number=Sing`
+
 ## Tillgänglig via
 \bigskip
 
@@ -621,13 +769,38 @@ SweLL (Swedish Learner Language) korpusen:
 - \small `spraakbanken.gu.se/resurser/ud217_swedish-swell`
 
 ## Tack!
-<!-- TODO: regenerate tree in Haskell -->
-
 \bigskip \bigskip
 
 
 \centering
-![](tack.svg)
+\setlength{\unitlength}{0.3mm}
+\begin{picture}(305.0,90.0)
+  \large
+  \put(0.0,0.0){tackar}
+  \put(64.0,0.0){\bfseries all}
+  \put(110.0,0.0){som}
+  \put(156.0,0.0){hjälpte}
+  \put(229.0,0.0){oss}
+  \put(0.0,15.0){{\tiny VERB}}
+  \put(64.0,15.0){{\tiny PRON}}
+  \put(110.0,15.0){{\tiny PRON}}
+  \put(156.0,15.0){{\tiny VERB}}
+  \put(229.0,15.0){{\tiny PRON}}
+  \put(15.0,90.0){\vector(0,-1){60.0}}
+  \put(20.0,80.0){{\tiny root}}
+  \put(52.0,30.0){\oval(59.3125,33.333333333333336)[t]}
+  \put(81.65625,35.0){\vector(0,-1){5.0}}
+  \put(45.75,49.66666666666667){{\tiny obj}}
+  \put(143.0,30.0){\oval(39.47826086956522,33.333333333333336)[t]}
+  \put(123.26086956521739,35.0){\vector(0,-1){5.0}}
+  \put(131.75,49.66666666666667){{\tiny nsubj}}
+  \put(130.0,30.0){\oval(88.73913043478261,66.66666666666667)[t]}
+  \put(174.3695652173913,35.0){\vector(0,-1){5.0}}
+  \put(109.75,66.33333333333334){{\tiny acl:relcl}}
+  \put(212.5,30.0){\oval(68.89041095890411,33.333333333333336)[t]}
+  \put(246.94520547945206,35.0){\vector(0,-1){5.0}}
+  \put(205.75,49.66666666666667){{\tiny obj}}
+\end{picture}
 
 \bigskip \bigskip \bigskip \bigskip
 ![](help.png)

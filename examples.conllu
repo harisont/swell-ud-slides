@@ -1,5 +1,0 @@
-1	tackar	tacka	VERB	VB|PRS|AKT	Mood=Ind|Tense=Pres|VerbForm=Fin|Voice=Act	0	root	_	TokenRange=0:6
-2	all	all	PRON	TOT-SG	Definite=Ind|Number=Plur|PronType=Tot	1	nsubj	_	TokenRange=7:10
-3	som	som	PRON	HP|-|-|-	PronType=Rel	4	nsubj	_	TokenRange=11:14
-4	hjälpte	hjälpa	VERB	VB|PRT|AKT	Mood=Ind|Tense=Past|VerbForm=Fin|Voice=Act	2	acl:relcl	_	TokenRange=15:22
-5	oss	vi	PRON	PN|UTR|PLU|DEF|OBJ	Case=Acc|Definite=Def|Gender=Com|Number=Plur|PronType=Prs	4	obj	_	SpaceAfter=No|TokenRange=23:26
